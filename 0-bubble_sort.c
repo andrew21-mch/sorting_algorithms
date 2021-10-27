@@ -6,8 +6,6 @@
  * @array: pointer to array to sort
  * @size: number of elements
 */
-
-
 void bubble_sort(int *array, size_t size)
 {
 size_t i, len = size;
@@ -20,12 +18,10 @@ do {
 	{
 		if (array[i - 1] > array[i])
 		{
-		  //swap values here
 			tmp = array[i];
 			array[i] = array[i - 1];
 			array[i - 1] = tmp;
 			swapped = i;
-			//print swapped values
 			print_array(array, len);
 		}
 	}
@@ -33,3 +29,4 @@ do {
 } while (size >= 1);
 
 }
+
