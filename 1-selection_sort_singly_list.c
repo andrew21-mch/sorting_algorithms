@@ -8,7 +8,7 @@ void insertion_sort_singly_list(listint_t **list)
 
 listint_t *node, *head, *prev_head, *prev_node;
 int i, j;
-if (list == NULL)
+if (list == NULL) //check if list it null
 	return;
 
 node = *list;
@@ -31,7 +31,7 @@ for (i = 0; node != NULL; i++)
 			node = prev_node;
 			print_list(*list);
 		}
-
+//swap
 		prev_head = head;
 		head = head->next;
 	}
