@@ -8,25 +8,25 @@
 */
 void bubble_sort_not_optimised(int *array, size_t size){
 size_t i;
-short int swapped;
-int tmp;
+short int swap_value;
+int temp;
 
 do
 {
-	swapped = 0;
+	swap_value = 0;
 	for (i = 1; i < size; i++)
 	{
 		print_array(array, size);
 		if (array[i-1] > array[i])
 		{
-			tmp = array[i];
+			temp = array[i];
 			array[i] = array[i-1];
-			array[i-1] = tmp;
-			swapped = 1;
+			array[i-1] = temp;
+			swap_value = 1;
 			print_array(array, size);
 		}
 	}
-	
-} while (swapped != 0);
+
+} while (swap_value != 0);
 
 }
