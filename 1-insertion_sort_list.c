@@ -32,7 +32,7 @@ while (node != NULL)
 			*list = temp;
 			temp->prev = NULL;
 		}
-		else
+		else 
 		{
 			temp->prev = temp_prev->prev;
 			temp_prev->prev->next = temp;
