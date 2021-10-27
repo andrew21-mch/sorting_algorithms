@@ -18,29 +18,29 @@ while (node != NULL)
 {
 	tmp = node;
 	next = node->next;
-	tmp_next = tmp->next; /*Will be NULL for the last Node*/
-	tmp_prev = tmp->prev;
+	tmp_next = temp->next; /*Will be NULL for the last Node*/
+	tmp_prev = temp->prev;
 
-	while (tmp->prev != NULL && tmp_prev->n > tmp->n)
+	while (temp->prev != NULL && temp_prev->n > temp->n)
 	{
-		if (tmp_next != NULL)
-			tmp_next->prev = tmp_prev;
-		tmp_prev->next = tmp_next;
-		if (tmp_prev->prev == NULL)
+		if (temp_next != NULL)
+			temp_next->prev = temp_prev;
+		temp_prev->next = temp_next;
+		if (temp_prev->prev == NULL)
 		{
-			tmp_prev->prev = tmp;
-			*list = tmp;
-			tmp->prev = NULL;
+			temp_prev->prev = temp;
+			*list = temp;
+			temp->prev = NULL;
 		}
 		else
 		{
-			tmp->prev = tmp_prev->prev;
-			tmp_prev->prev->next = tmp;
-			tmp_prev->prev = tmp;
+			temp->prev = temp_prev->prev;
+			temp_prev->prev->next = temp;
+			temp_prev->prev = temp;
 		}
-		tmp->next = tmp_prev;
-		tmp_prev = tmp->prev;
-		tmp_next = tmp->next;
+		temp->next = temp_prev;
+		temp_prev = temp->prev;
+		temp_next = temp->next;
 		print_list(*list);
 	}
 	node = next;
