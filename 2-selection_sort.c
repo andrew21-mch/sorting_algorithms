@@ -10,19 +10,19 @@
 void selection_sort(int *array, size_t size)
 {
 
-size_t i, j, jMin;
+size_t i, j, Min;
 
 for (i = 0; i <= size; i++)
 {
-	jMin = i; /*consider the first element as min*/
+	Min = i; /*consider the first element as the minimum*/
 	for (j = i + 1; j < size; j++)
 	{
-		if (array[j] < array[jMin])
-			jMin = j;
+		if (array[j] < array[Min])
+			Min = j;
 	}
-	if (jMin != i)
+	if (Min != i)
 	{
-		swap_int(array, i, jMin);
+		swap_int(array, i, Min);
 		print_array(array, size);
 	}
 }
@@ -37,8 +37,8 @@ for (i = 0; i <= size; i++)
 */
 void swap_int(int *array, size_t a, size_t b)
 {
-int tmp;
-tmp = array[a];
+int temp;
+temp = array[a];
 array[a] = array[b];
-array[b] = tmp;
+array[b] = temp;
 }
