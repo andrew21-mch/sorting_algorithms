@@ -7,7 +7,7 @@
 void insertion_sort_list(listint_t **list)
 {
 
-listint_t *node, *tmp, *next, *tmp_next, *tmp_prev;
+listint_t *node, *temp, *next, *temp_next, *temp_prev;
 int i = 0;
 
 if (list == NULL || (*list)->next == NULL)
@@ -16,10 +16,10 @@ node = *list;
 node = node->next;
 while (node != NULL)
 {
-	tmp = node;
+	temp = node;
 	next = node->next;
-	tmp_next = temp->next; /*Will be NULL for the last Node*/
-	tmp_prev = temp->prev;
+	temp_next = temp->next; /*Will be NULL for the last Node*/
+	temp_prev = temp->prev;
 
 	while (temp->prev != NULL && temp_prev->n > temp->n)
 	{
